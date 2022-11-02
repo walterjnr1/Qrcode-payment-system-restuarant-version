@@ -1,7 +1,7 @@
 class Product_search {
   final String product_no;
   final String product_name;
-  final int amount;
+  final dynamic amount;
   final String photo;
   Product_search({
     required this.product_no,
