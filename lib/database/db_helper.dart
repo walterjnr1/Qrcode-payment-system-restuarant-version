@@ -25,11 +25,12 @@ class DBHelper {
 
   _onCreate(Database db, int version) async {
     await db.execute(
-        'CREATE TABLE cart(ID INTEGER PRIMARY KEY, product_no VARCHAR UNIQUE, product_name TEXT, initialAmount INTEGER, productAmount INTEGER, quantity INTEGER , photo TEXT)');
+        'CREATE TABLE cart(ID INTEGER PRIMARY KEY AUTOINCREMENT , product_no VARCHAR UNIQUE, product_name TEXT, initialAmount INTEGER, productAmount INTEGER, quantity INTEGER , photo TEXT)');
   }
 
   Future<Cart> insert(Cart cart) async {
     var dbClient = await database;
+     //await dbClient!.insert('cart', cart.toMap(),conflictAlgorithm: ConflictAlgorithm.replace);
     await dbClient!.insert('cart', cart.toMap());
     return cart;
   }
