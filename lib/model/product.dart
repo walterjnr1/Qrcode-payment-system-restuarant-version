@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 class Product {
   final String product_no;
   final String product_name;
-  final int amount;
+  final dynamic amount;
   final String photo;
   Product({
     required this.product_no,
