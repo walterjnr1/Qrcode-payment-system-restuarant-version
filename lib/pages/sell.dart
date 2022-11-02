@@ -2,12 +2,11 @@ import 'dart:convert';
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_code_payment_system/pages/dashboard.dart';
-import 'package:qr_code_payment_system/pages/product_list.dart';
-import 'package:qr_code_payment_system/pages/profile.dart';
+import 'package:restaurant_qrcode_payment_system/pages/dashboard.dart';
+import 'package:restaurant_qrcode_payment_system/pages/product_list.dart';
+import 'package:restaurant_qrcode_payment_system/pages/profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../database/db_helper.dart';
 import '../model/cart_model.dart';
@@ -103,21 +102,30 @@ class SellState extends State<Sell> {
     //save to local storage (Cart) using sqlite --DBhelper
     final cart = Provider.of<CartProvider>(context);
     void saveData(int index) {
+      print(products[index].amount);
+      int amtt=  (int.parse(products[index].amount));
+      String prod_no=  products[index].product_no;
+
+      print(amtt);
+      print(products[index].product_no);
       print(index);
+
       dbHelper
           .insert(
         Cart(
+          //ID: int.parse(index),
           ID: index,
-          product_no: products[index].product_no,
+          product_no: prod_no,
           product_name: products[index].product_name,
-          initialAmount: products[index].amount,
-          productAmount: products[index].amount,
+          initialAmount: amtt,
+          productAmount: amtt,
           quantity: ValueNotifier(1),
           photo: products[index].photo,
         ),
       )
           .then((value) {
-        cart.addTotalAmount(products[index].amount.toDouble());
+        cart.addTotalAmount(amtt.toDouble());
+
         cart.addCounter();
         Fluttertoast.showToast(
             msg: "${products[index].product_name} Added to Cart",
@@ -126,9 +134,9 @@ class SellState extends State<Sell> {
             timeInSecForIosWeb: 2,
             textColor: Colors.white);
       }).onError((error, stackTrace) {
-        //print(error.toString());
+        print (error);
         Fluttertoast.showToast(
-            // msg: error.toString(),
+             //msg: error.toString(),
             msg: "${products[index].product_name} Added already to Cart",
             toastLength: Toast.LENGTH_SHORT,
             backgroundColor: Colors.red,
@@ -235,8 +243,7 @@ class SellState extends State<Sell> {
 
                 child: Banner(
               message:
-                  NumberFormat.simpleCurrency(name: 'NGN', decimalDigits: 2)
-                      .format(data.amount),
+                  NumberFormat.simpleCurrency(name: 'NGN', decimalDigits: 2).format(int.parse(data.amount)),
               location: BannerLocation.topStart,
               color: Colors.red,
               child: Card(
@@ -266,7 +273,7 @@ class SellState extends State<Sell> {
                         children: [
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  primary: Colors.deepOrangeAccent),
+                                  backgroundColor: Colors.deepOrangeAccent),
                               onPressed: () {
                                 saveData(index);
                               },
