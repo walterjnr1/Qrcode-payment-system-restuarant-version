@@ -43,6 +43,10 @@ class Env {
   //static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
 static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
   //static String URL_PREFIX = "https://qrcode.americanlandbank.org/restuarant";
+<<<<<<< HEAD
+
+=======
+>>>>>>> 40733bf7a178cb778e698a205b9341ace1d421f4
 
 
 }
