@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Cart {
-  late final int? ID;
+  final int? ID;
   final String? product_no;
   final String? product_name;
   final int? initialAmount;
@@ -11,7 +11,7 @@ class Cart {
 
   Cart(
       {
-        required this.ID,
+      required this.ID,
       required this.product_no,
       required this.product_name,
       required this.initialAmount,

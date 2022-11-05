@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qr_code_payment_system/pages/product_list.dart';
-import 'package:qr_code_payment_system/pages/profile.dart';
-import 'package:qr_code_payment_system/pages/sell.dart';
-import 'package:qr_code_payment_system/pages/transactionhistory.dart';
+import 'package:restaurant_qrcode_payment_system/pages/product_list.dart';
+import 'package:restaurant_qrcode_payment_system/pages/profile.dart';
+import 'package:restaurant_qrcode_payment_system/pages/sell.dart';
+import 'package:restaurant_qrcode_payment_system/pages/transactionhistory.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../model/user.dart';
 import '../widgets/slider.dart';
@@ -126,7 +126,8 @@ class _DashboardState extends State<Dashboard> {
 
                           Container(
                               margin: const EdgeInsets.only(top: 2.0, bottom: 2.0),
-                              child:   Text("Balance: ${NumberFormat.simpleCurrency(name: 'NGN', decimalDigits: 2).format(snapshot.data!.balance)}",
+                              child:   Text("Balance: ${NumberFormat.simpleCurrency(name: 'NGN', decimalDigits: 2).format(int.parse(snapshot.data!.balance))}",
+
                                   style: const TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold,

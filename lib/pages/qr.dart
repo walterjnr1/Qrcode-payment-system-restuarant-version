@@ -1,13 +1,9 @@
-import 'dart:convert';
-
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:intl/intl.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_code_payment_system/pages/sell.dart';
+import 'package:restaurant_qrcode_payment_system/pages/sell.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../model/cart_model.dart';
 import '../provider/cart_provider.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -134,8 +130,8 @@ class QRState extends State<QR> {
                     const SizedBox(height: 20),
 
                     const SizedBox(height: 15),
-                    FlatButton(
-                      minWidth: double.infinity,
+                    ElevatedButton(
+                      //Width: double.infinity,
                       onPressed: ()  {
                         Navigator.push(
                           context,
@@ -145,10 +141,7 @@ class QRState extends State<QR> {
                       //Title given on Button
                       child: Text("Close",
                         style: TextStyle(color: Colors.indigo[900],),),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: const BorderSide(color: Colors.indigo),
-                      ),
+
                     ),
                   ],
                 ),

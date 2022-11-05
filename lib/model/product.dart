@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 
 class Product {
   final String product_no;
   final String product_name;
-  final int amount;
+  final dynamic amount;
   final String photo;
   Product({
     required this.product_no,
@@ -35,7 +34,8 @@ class Product {
     'product_no': product_no,    'product_name': product_name,    'amount': amount,    'photo': photo,  };
 }
 class Env {
-  static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
-  //static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+  //static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
+  static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+  //static String URL_PREFIX = "https://qrcode.americanlandbank.org/restuarant";
 
 }

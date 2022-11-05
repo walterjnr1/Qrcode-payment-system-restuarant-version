@@ -1,7 +1,7 @@
 class Product_search {
   final String product_no;
   final String product_name;
-  final int amount;
+  final dynamic amount;
   final String photo;
   Product_search({
     required this.product_no,
@@ -25,6 +25,8 @@ class Product_search {
   };
 }
 class Env_s {
- static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
- // static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+ //static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
+ static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+  //static String URL_PREFIX = "https://qrcode.americanlandbank.org/restuarant";
+
 }

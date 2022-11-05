@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:qr_code_payment_system/pages/dashboard.dart';
-import 'package:qr_code_payment_system/pages/login.dart';
+import 'package:restaurant_qrcode_payment_system/pages/dashboard.dart';
+import 'package:restaurant_qrcode_payment_system/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dashboard.dart';
 

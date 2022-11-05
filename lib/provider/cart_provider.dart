@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:qr_code_payment_system/database/db_helper.dart';
-import 'package:qr_code_payment_system/model/cart_model.dart';
+import 'package:restaurant_qrcode_payment_system/database/db_helper.dart';
+import 'package:restaurant_qrcode_payment_system/model/cart_model.dart';
 
 class CartProvider with ChangeNotifier {
   DBHelper dbHelper = DBHelper();

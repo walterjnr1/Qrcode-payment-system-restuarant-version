@@ -2,10 +2,10 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_code_payment_system/database/db_helper.dart';
-import 'package:qr_code_payment_system/model/cart_model.dart';
-import 'package:qr_code_payment_system/pages/qr.dart';
-import 'package:qr_code_payment_system/provider/cart_provider.dart';
+import 'package:restaurant_qrcode_payment_system/database/db_helper.dart';
+import 'package:restaurant_qrcode_payment_system/model/cart_model.dart';
+import 'package:restaurant_qrcode_payment_system/pages/qr.dart';
+import 'package:restaurant_qrcode_payment_system/provider/cart_provider.dart';
 import '../model/user.dart';
 
 

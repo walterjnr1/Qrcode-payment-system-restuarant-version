@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:qr_code_payment_system/UI_Model/Theme.dart';
+import 'package:restaurant_qrcode_payment_system/UI_Model/Theme.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_code_payment_system/pages/register.dart';
+import 'package:restaurant_qrcode_payment_system/pages/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../model/user.dart';
 import 'dashboard.dart';
@@ -115,13 +115,11 @@ class _LoginState extends State<Login> {
                                   Center(
                                       child: Padding(
                                         padding: EdgeInsets.only(top: 8.0),
-                                        child: Text("Restuarant Login Form",
+                                        child: Text("Restaurant Login Form",
                                             style: TextStyle(
                                                 color: ArgonColors.text,
                                                 fontSize: 16.0)),
                                       )),
-
-                                  // Divider()
                                 ],
                               )),
                           Container(
@@ -145,9 +143,9 @@ class _LoginState extends State<Login> {
                                             child: TextField(
                                               decoration: const InputDecoration(
                                                 border: OutlineInputBorder(),
-                                                labelText: 'UserName:',
+                                                labelText: 'Username:',
                                               ),
-                                               controller:   txtusername_f,
+                                              controller:   txtusername_f,
                                             ),
                                           ),
                                           Padding(
@@ -155,9 +153,9 @@ class _LoginState extends State<Login> {
                                             child: TextField(
                                               decoration: const InputDecoration(
                                                 border: OutlineInputBorder(),
-                                                labelText: 'Password',
+                                                labelText: 'Password:',
                                               ),
-                                               controller:   txtpassword_f,
+                                              controller:   txtpassword_f,
                                               obscureText: true,
 
                                             ),
@@ -233,22 +231,17 @@ class _LoginState extends State<Login> {
                                             ],
                                           ),
                                         ),
-                                      ),
-                                    ]
-                              )
-
-                              )
-                              )
-                          )
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ))
                         ],
-                      )
-            ),
+                      )),
                 ),
-              ]
-              ),
+              ]),
             )
           ],
-        )
-    );
+        ));
   }
 }

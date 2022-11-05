@@ -1,6 +1,5 @@
 class User {
 
-  final int ID;
   final String company_name;
   final String username;
   final String password;
@@ -10,9 +9,7 @@ class User {
   final dynamic balance;
   final String photo;
 
-
   User({
-    required this.ID,
     required this.company_name,
     required this.username,
     required this.password,
@@ -26,7 +23,6 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      ID: json['ID'],
       company_name: json['company_name'],
       username: json['username'],
       password: json['password'],
@@ -38,12 +34,14 @@ class User {
     );
   }
   Map<String, dynamic> toJson() => {
-    'ID': ID, 'company_name': company_name,    'username': username,    'password': password,    'phone': phone,    'address': address,    'fullname': fullname,
+    'company_name': company_name,    'username': username,    'password': password,    'phone': phone,    'address': address,    'fullname': fullname,
     'balance': balance,'photo': photo,
 
   };
 }
 class Env {
-  static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
-//static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+ //static String URL_PREFIX = "http://192.168.43.16/Qr_code_payment_system/restuarant";
+static String URL_PREFIX = "https://qrcode.leastpayproject.com.ng/restuarant";
+//static String URL_PREFIX = "https://qrcode.americanlandbank.org/restuarant";
+
 }
